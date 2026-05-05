@@ -12,6 +12,10 @@
       --brown: #8B5E3C;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -118,6 +122,43 @@
       line-height: 1.6;
     }
 
+    /* TRUST SECTION */
+    .trust {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .trust h2 {
+      color: var(--brown);
+      margin-bottom: 30px;
+    }
+
+    .trust-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .trust-box {
+      background: #111;
+      border: 1px solid #222;
+      padding: 20px;
+      width: 220px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .trust-box:hover {
+      border-color: var(--brown);
+      transform: translateY(-5px);
+    }
+
+    .trust-box p {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
     .contact {
       text-align: center;
       padding: 60px 20px;
@@ -164,14 +205,14 @@
       <h3>Basic Plan</h3>
       <p class="price">₱1,200</p>
       <p class="features">1-page website • Mobile responsive • Fast delivery</p>
-      <a href="#" class="btn">Get Started</a>
+      <a href="#contact" class="btn">Get Started</a>
     </div>
 
     <div class="card">
       <h3>Pro Plan</h3>
       <p class="price">₱2,000</p>
       <p class="features">Multi-page • Custom design • Priority support</p>
-      <a href="#" class="btn">Get Started</a>
+      <a href="#contact" class="btn">Get Started</a>
     </div>
 
   </section>
@@ -180,12 +221,38 @@
     <h2>Why Choose Us?</h2>
     <p>
       At P&J Creative Studio, we focus on building clean, modern websites
-      that help your business stand out and grow online. Simple, fast,
-      and effective.
+      that help your business stand out and grow online.
     </p>
   </section>
 
-  <section class="contact">
+  <!-- TRUST SECTION -->
+  <section class="trust">
+    <h2>Why Clients Trust Us</h2>
+
+    <div class="trust-container">
+      <div class="trust-box">
+        <h3>⚡ Fast Delivery</h3>
+        <p>Get your website ready in just a few days.</p>
+      </div>
+
+      <div class="trust-box">
+        <h3>💼 Professional Design</h3>
+        <p>Clean, modern, and built to impress customers.</p>
+      </div>
+
+      <div class="trust-box">
+        <h3>📱 Mobile Friendly</h3>
+        <p>Looks perfect on phones, tablets, and desktops.</p>
+      </div>
+
+      <div class="trust-box">
+        <h3>💬 Easy Communication</h3>
+        <p>We work with you every step of the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
     <h2>Reach Me</h2>
     <p>Have a project in mind? Let’s build it.</p>
 
