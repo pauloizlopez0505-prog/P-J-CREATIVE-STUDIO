@@ -26,27 +26,32 @@
 
     header {
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 80px 20px 50px;
     }
 
     header h2 {
       color: var(--brown);
-      letter-spacing: 2px;
-      margin-bottom: 20px;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       max-width: 700px;
       margin: auto;
       line-height: 1.4;
+    }
+
+    header p {
+      margin-top: 20px;
+      color: #ccc;
     }
 
     .plans {
       display: flex;
       justify-content: center;
       gap: 30px;
-      padding: 50px 20px;
+      padding: 60px 20px;
       flex-wrap: wrap;
     }
 
@@ -61,7 +66,7 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
       border-color: var(--brown);
     }
 
@@ -75,9 +80,15 @@
       margin: 20px 0;
     }
 
+    .features {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
     .btn {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 22px;
       background: var(--brown);
       color: var(--white);
       text-decoration: none;
@@ -88,6 +99,46 @@
 
     .btn:hover {
       opacity: 0.8;
+    }
+
+    .about {
+      text-align: center;
+      padding: 60px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .about h2 {
+      color: var(--brown);
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .contact h2 {
+      color: var(--brown);
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .contact-box {
+      background: #111;
+      border: 1px solid #222;
+      display: inline-block;
+      padding: 25px 30px;
+      border-radius: 12px;
     }
 
     footer {
@@ -104,6 +155,7 @@
   <header>
     <h2>P&J CREATIVE STUDIO</h2>
     <h1>we build websites, that build your business</h1>
+    <p>Modern, affordable websites for growing brands</p>
   </header>
 
   <section class="plans">
@@ -111,17 +163,36 @@
     <div class="card">
       <h3>Basic Plan</h3>
       <p class="price">₱1,200</p>
-      <p>Perfect for simple websites</p>
+      <p class="features">1-page website • Mobile responsive • Fast delivery</p>
       <a href="#" class="btn">Get Started</a>
     </div>
 
     <div class="card">
       <h3>Pro Plan</h3>
       <p class="price">₱2,000</p>
-      <p>For businesses that want more features</p>
+      <p class="features">Multi-page • Custom design • Priority support</p>
       <a href="#" class="btn">Get Started</a>
     </div>
 
+  </section>
+
+  <section class="about">
+    <h2>Why Choose Us?</h2>
+    <p>
+      At P&J Creative Studio, we focus on building clean, modern websites
+      that help your business stand out and grow online. Simple, fast,
+      and effective.
+    </p>
+  </section>
+
+  <section class="contact">
+    <h2>Reach Me</h2>
+    <p>Have a project in mind? Let’s build it.</p>
+
+    <div class="contact-box">
+      <p><strong>Phone:</strong> 0906 097 0741</p>
+      <a href="tel:09060970741" class="btn">Call Now</a>
+    </div>
   </section>
 
   <footer>
