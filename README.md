@@ -1,46 +1,18 @@
-# 🚀 P&J Creative Studio
+<section id="contact">
+  <h2>Reach Me</h2>
+  <p>Ready to get your website? Message or call now and let’s start.</p>
 
-**We build websites that build your business.**
+  <div class="contact-box">
+    <p><strong>Phone:</strong> 0906 097 0741</p>
 
-Modern, affordable, and high-converting websites for individuals, startups, and growing businesses.
+    <a href="tel:09060970741" class="btn">📞 Call Now</a>
+    
+    <br><br>
 
----
+    <a href="sms:09060970741" class="btn">💬 Send SMS</a>
+  </div>
 
-## 🌐 Live Website
-🔗 https://pauloizlopez0505-prog.github.io/P-J-CREATIVE-STUDIO/
-
----
-
-## 💼 Services
-
-### 🔹 Basic Plan – ₱1,200
-- 1-page website  
-- Mobile responsive design  
-- Fast delivery  
-
-### 🔸 Pro Plan – ₱2,000
-- Multi-page website  
-- Custom design  
-- Priority support  
-
----
-
-## 📞 Contact
-- **Phone:** 0906 097 0741  
-
----
-
-## 🛠 Built With
-- HTML  
-- CSS  
-- JavaScript  
-
----
-
-## ✨ About
-P&J Creative Studio focuses on building clean, modern, and effective websites that help businesses stand out online and convert visitors into customers.
-
----
-
-## 📌 Status
-🚧 Actively improving and updating
+  <p style="margin-top:20px; color:#aaa; font-size:0.9rem;">
+    ⚡ Usually responds within a few minutes
+  </p>
+</section>
