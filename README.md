@@ -1,15 +1,46 @@
-# P&J Creative Studio
+# 🚀 P&J Creative Studio
 
-We build websites that build your business.
+**We build websites that build your business.**
 
-## 💼 Services
-- Basic Plan – ₱1,200  
-- Pro Plan – ₱2,000  
+Modern, affordable, and high-converting websites for individuals, startups, and growing businesses.
+
+---
 
 ## 🌐 Live Website
-(coming soon)
+🔗 https://pauloizlopez0505-prog.github.io/P-J-CREATIVE-STUDIO/
+
+---
+
+## 💼 Services
+
+### 🔹 Basic Plan – ₱1,200
+- 1-page website  
+- Mobile responsive design  
+- Fast delivery  
+
+### 🔸 Pro Plan – ₱2,000
+- Multi-page website  
+- Custom design  
+- Priority support  
+
+---
+
+## 📞 Contact
+- **Phone:** 0906 097 0741  
+
+---
 
 ## 🛠 Built With
-- HTML
-- CSS
-- JavaScript
+- HTML  
+- CSS  
+- JavaScript  
+
+---
+
+## ✨ About
+P&J Creative Studio focuses on building clean, modern, and effective websites that help businesses stand out online and convert visitors into customers.
+
+---
+
+## 📌 Status
+🚧 Actively improving and updating
