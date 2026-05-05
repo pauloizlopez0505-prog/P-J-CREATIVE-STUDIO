@@ -59,6 +59,18 @@
       opacity: 0.85;
     }
 
+    /* ANIMATION */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* HERO */
     .hero p {
       margin-top: 15px;
@@ -84,6 +96,12 @@
       border-radius: 12px;
       width: 260px;
       border: 1px solid #222;
+      transition: 0.3s;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      border-color: var(--brown);
     }
 
     .price {
@@ -91,14 +109,12 @@
       margin: 15px 0;
     }
 
-    /* TESTIMONIAL */
     .testimonial {
       max-width: 600px;
       margin: 20px auto;
       font-style: italic;
     }
 
-    /* URGENCY */
     .urgency {
       background: #111;
       padding: 20px;
@@ -107,7 +123,6 @@
       border: 1px solid #222;
     }
 
-    /* CONTACT */
     .contact-box {
       background: #111;
       padding: 30px;
@@ -127,7 +142,7 @@
 <body>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero fade-in">
     <h2>P&J CREATIVE STUDIO</h2>
     <h1>We build websites that turn visitors into paying customers</h1>
     <p>Modern, affordable websites designed to grow your business</p>
@@ -140,9 +155,8 @@
   </section>
 
   <!-- WHO IT'S FOR -->
-  <section>
+  <section class="fade-in">
     <h2>Perfect For</h2>
-
     <p>✔ Small businesses</p>
     <p>✔ Online sellers</p>
     <p>✔ Startups</p>
@@ -150,9 +164,8 @@
   </section>
 
   <!-- WHAT YOU GET -->
-  <section>
+  <section class="fade-in">
     <h2>What You Get</h2>
-
     <div class="grid">
       <div class="box">⚡ Fast loading website</div>
       <div class="box">📱 Mobile responsive design</div>
@@ -162,9 +175,8 @@
   </section>
 
   <!-- PLANS -->
-  <section>
+  <section class="fade-in">
     <h2>Choose Your Plan</h2>
-
     <div class="grid">
       <div class="box">
         <h3>Basic</h3>
@@ -182,8 +194,30 @@
     </div>
   </section>
 
+  <!-- PORTFOLIO -->
+  <section class="fade-in">
+    <h2>Recent Work</h2>
+
+    <div class="grid">
+      <div class="box">
+        <h3>Restaurant Website</h3>
+        <p>Modern design for a local food business</p>
+      </div>
+
+      <div class="box">
+        <h3>Clothing Brand</h3>
+        <p>Clean and stylish landing page</p>
+      </div>
+
+      <div class="box">
+        <h3>Startup Page</h3>
+        <p>Built to convert visitors into customers</p>
+      </div>
+    </div>
+  </section>
+
   <!-- TESTIMONIALS -->
-  <section>
+  <section class="fade-in">
     <h2>What Clients Say</h2>
 
     <div class="testimonial">
@@ -196,7 +230,7 @@
   </section>
 
   <!-- URGENCY -->
-  <section>
+  <section class="fade-in">
     <h2>Limited Slots Available</h2>
 
     <div class="urgency">
@@ -206,7 +240,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="fade-in">
     <h2>Reach Me</h2>
     <p>Ready to get your website?</p>
 
@@ -219,6 +253,21 @@
   <footer>
     © 2026 P&J Creative Studio
   </footer>
+
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    document.querySelectorAll(".fade-in").forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
