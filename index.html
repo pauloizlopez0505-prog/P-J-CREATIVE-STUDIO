@@ -20,7 +20,24 @@ body {
   overflow:hidden;
 }
 
-/* PAGE SYSTEM */
+/* NAVBAR */
+.nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#111;
+  padding:15px;
+  text-align:center;
+  z-index:9999;
+  border-bottom:1px solid #222;
+}
+
+.nav span {
+  color:var(--brown);
+  font-weight:bold;
+}
+
+/* PAGE */
 .page {
   position:absolute;
   width:100%;
@@ -29,19 +46,17 @@ body {
   left:0;
   opacity:0;
   transform:translateX(40px);
-  transition:all 0.5s ease;
-  padding:60px 20px;
+  transition:0.5s;
+  padding:100px 20px 60px;
   overflow-y:auto;
   text-align:center;
   pointer-events:none;
-  z-index:0;
 }
 
 .page.active {
   opacity:1;
   transform:translateX(0);
   pointer-events:auto;
-  z-index:1;
 }
 
 /* TEXT */
@@ -60,12 +75,10 @@ p {color:#ccc;}
   text-decoration:none;
   cursor:pointer;
   border:none;
-  font-size:16px;
   transition:0.2s;
 }
 
 .btn:hover {
-  opacity:0.8;
   transform:scale(1.05);
 }
 
@@ -91,23 +104,25 @@ p {color:#ccc;}
   border-color:var(--brown);
 }
 
-.price {
-  font-size:1.8rem;
-  margin:10px 0;
+/* STATS */
+.stats {
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:40px;
+  flex-wrap:wrap;
 }
 
-/* TRUST */
-.trust {
-  margin-top:15px;
-  font-size:0.9rem;
-  color:#aaa;
+.stat h3 {
+  color:var(--brown);
+  font-size:2rem;
 }
 
-/* TESTIMONIAL */
-.testimonial {
-  margin:15px auto;
-  max-width:500px;
-  font-style:italic;
+/* FAQ */
+.faq {
+  max-width:600px;
+  margin:20px auto;
+  text-align:left;
 }
 
 /* ARROWS */
@@ -115,105 +130,106 @@ p {color:#ccc;}
   position:fixed;
   top:50%;
   transform:translateY(-50%);
-  font-size:28px;
-  background:rgba(0,0,0,0.6);
-  padding:12px 16px;
-  border-radius:10px;
+  font-size:30px;
+  background:#111;
+  padding:14px;
+  border-radius:50%;
   cursor:pointer;
   z-index:9999;
-  user-select:none;
+  border:1px solid #333;
 }
 
 .arrow:hover {
   background:var(--brown);
 }
 
-.arrow.left { left:10px; }
-.arrow.right { right:10px; }
+.arrow.left { left:15px; }
+.arrow.right { right:15px; }
 
+/* FOOTER */
+footer {
+  margin-top:40px;
+  color:#777;
+  font-size:0.9rem;
+}
 </style>
 </head>
 
 <body>
 
-<!-- ARROWS -->
+<div class="nav">
+  <span>P&J CREATIVE STUDIO</span>
+</div>
+
 <div class="arrow left" onclick="prevPage()">←</div>
 <div class="arrow right" onclick="nextPage()">→</div>
 
 <!-- PAGE 1 -->
 <div id="page1" class="page active">
-  <h2>P&J CREATIVE STUDIO</h2>
   <h1>We build websites that turn visitors into customers</h1>
-  <p>Modern, affordable websites designed to grow your business</p>
+  <p>Modern, affordable websites for your business</p>
 
-  <div class="trust">
-    Fast delivery • Mobile-friendly • Built for real businesses
+  <button class="btn" onclick="goToPage(3)">Get Started</button>
+  <br>
+  <button class="btn" onclick="goToPage(2)">See More</button>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <h3>Fast</h3>
+      <p>Quick delivery</p>
+    </div>
+    <div class="stat">
+      <h3>Clean</h3>
+      <p>Modern design</p>
+    </div>
+    <div class="stat">
+      <h3>Affordable</h3>
+      <p>Great pricing</p>
+    </div>
   </div>
 
-  <button class="btn" onclick="goToPage(3)">Get Started</button><br>
-  <button class="btn" onclick="goToPage(2)">See More</button>
+  <footer>© 2026 P&J Creative Studio</footer>
 </div>
 
 <!-- PAGE 2 -->
 <div id="page2" class="page">
+  <h2>Website Packages</h2>
 
-  <h2>What You Get</h2>
-  <div class="grid">
-    <div class="box">⚡ Fast loading website</div>
-    <div class="box">📱 Mobile responsive</div>
-    <div class="box">🎨 Clean modern design</div>
-    <div class="box">💼 Built for your business</div>
-  </div>
-
-  <h2 style="margin-top:50px;">Website Packages</h2>
   <div class="grid">
     <div class="box">
       <h3>Starter</h3>
-      <div class="price">Starts at ₱2,000</div>
-      <p>1-page • Mobile • Fast delivery</p>
+      <p>Starts at ₱2,000</p>
       <button class="btn" onclick="goToPage(3)">Get Started</button>
     </div>
 
     <div class="box">
       <h3>Business</h3>
-      <div class="price">Custom Pricing</div>
-      <p>Multi-page • Custom • Growth ready</p>
+      <p>Custom Pricing</p>
       <button class="btn" onclick="goToPage(3)">Get Started</button>
     </div>
   </div>
 
-  <h2 style="margin-top:50px;">Recent Work</h2>
-  <div class="grid">
-    <div class="box">Restaurant Website</div>
-    <div class="box">Clothing Brand</div>
-    <div class="box">Startup Landing Page</div>
+  <!-- FAQ -->
+  <h2 style="margin-top:50px;">FAQ</h2>
+  <div class="faq">
+    <p><strong>How long does it take?</strong><br>Usually a few days.</p>
+    <p><strong>Do I need a domain?</strong><br>Yes, we can help you set it up.</p>
+    <p><strong>Can I request changes?</strong><br>Yes, before final delivery.</p>
   </div>
 </div>
 
 <!-- PAGE 3 -->
 <div id="page3" class="page">
-
   <h2>Reach Me</h2>
   <p>Ready to get your website?</p>
-
-  <div class="trust">
-    ✔ Fast delivery<br>
-    ✔ Affordable pricing<br>
-    ✔ Built for real results
-  </div>
-
-  <div class="testimonial">
-    “Got my website in just a few days. It looks professional and helped my business.”
-  </div>
-
-  <div class="testimonial">
-    “Affordable and high quality. Super easy to work with.”
-  </div>
 
   <div class="box" style="margin:auto;">
     <p><strong>Phone:</strong> 0906 097 0741</p>
     <a href="tel:09060970741" class="btn">Call Now</a>
   </div>
+
+  <footer>Let’s build your business online 🚀</footer>
 </div>
 
 <script>
@@ -226,17 +242,13 @@ function goToPage(page) {
 }
 
 function nextPage() {
-  if (currentPage < totalPages) {
-    currentPage++;
-    updatePage();
-  }
+  if (currentPage < totalPages) currentPage++;
+  updatePage();
 }
 
 function prevPage() {
-  if (currentPage > 1) {
-    currentPage--;
-    updatePage();
-  }
+  if (currentPage > 1) currentPage--;
+  updatePage();
 }
 
 function updatePage() {
