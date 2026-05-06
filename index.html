@@ -113,10 +113,6 @@ p {color:#ccc;}
   text-align:left;
 }
 
-.faq p {
-  margin-bottom:15px;
-}
-
 /* ARROWS */
 .arrow {
   position:fixed;
@@ -154,7 +150,7 @@ footer {
   <h1>we build websites that build your business</h1>
   <p>Modern, affordable websites for your brand</p>
 
-  <button class="btn" onclick="goToPage(3)">Get Started</button><br>
+  <button class="btn" onclick="goToPage(4)">Get Started</button><br>
   <button class="btn" onclick="goToPage(2)">See Plans</button>
 
   <footer>Fast • Clean • Affordable</footer>
@@ -179,7 +175,7 @@ footer {
         ✔ Fast delivery
       </div>
 
-      <button class="btn" onclick="goToPage(3)">Get Started</button>
+      <button class="btn" onclick="goToPage(4)">Get Started</button>
     </div>
 
     <div class="box">
@@ -194,27 +190,46 @@ footer {
         ✔ Built for growth
       </div>
 
-      <button class="btn" onclick="goToPage(3)">Get Started</button>
+      <button class="btn" onclick="goToPage(4)">Get Started</button>
     </div>
 
   </div>
 
-  <!-- FAQ (ADDED BACK, NOT REMOVED ANYTHING) -->
-  <h2 style="margin-top:50px;">FAQ</h2>
+  <!-- EXTRA CONTENT (NEW, NOT REMOVING ANYTHING) -->
+  <h2 style="margin-top:50px;">What You Get</h2>
 
-  <div class="faq">
-    <p><strong>⏱ How long does it take?</strong><br>Usually a few days depending on the project.</p>
-
-    <p><strong>🌐 Do I need a domain?</strong><br>Yes, we can guide you or handle it for you.</p>
-
-    <p><strong>✏️ Can I request changes?</strong><br>Yes, we revise until you're satisfied before final delivery.</p>
+  <div class="grid">
+    <div class="box">⚡ Fast loading</div>
+    <div class="box">📱 Mobile ready</div>
+    <div class="box">🎨 Clean design</div>
+    <div class="box">💼 Business focused</div>
   </div>
+
+  <h2 style="margin-top:50px;">Who It's For</h2>
+  <p>✔ Small businesses<br>✔ Online sellers<br>✔ Startups<br>✔ Personal brands</p>
 
   <footer>Need something custom? We got you 👍</footer>
 </div>
 
-<!-- PAGE 3 -->
+<!-- PAGE 3 (FAQ) -->
 <div id="page3" class="page">
+  <h2>FAQ</h2>
+
+  <div class="faq">
+    <p><strong>⏱ How long does it take?</strong><br>Usually a few days.</p>
+
+    <p><strong>🌐 Do I need a domain?</strong><br>Yes, we can help or guide you.</p>
+
+    <p><strong>✏️ Can I request changes?</strong><br>Yes, before final delivery.</p>
+
+    <p><strong>💰 When do I pay?</strong><br>Only after you approve the preview.</p>
+  </div>
+
+  <footer>Still have questions? Go to contact 👍</footer>
+</div>
+
+<!-- PAGE 4 (CONTACT) -->
+<div id="page4" class="page">
   <h2>Reach Me</h2>
   <p>Ready to get your website?</p>
 
@@ -229,7 +244,7 @@ footer {
 
 <script>
 let currentPage = 1;
-const totalPages = 3;
+const totalPages = 4;
 
 function goToPage(page) {
   currentPage = page;
