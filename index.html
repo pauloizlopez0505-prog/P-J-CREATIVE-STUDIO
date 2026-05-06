@@ -20,7 +20,7 @@ body {
   overflow:hidden;
 }
 
-/* NAVBAR */
+/* NAV */
 .nav {
   position:fixed;
   top:0;
@@ -30,11 +30,7 @@ body {
   text-align:center;
   z-index:9999;
   border-bottom:1px solid #222;
-}
-
-.nav span {
   color:var(--brown);
-  font-weight:bold;
 }
 
 /* PAGE */
@@ -47,7 +43,7 @@ body {
   opacity:0;
   transform:translateX(40px);
   transition:0.5s;
-  padding:100px 20px 60px;
+  padding:90px 20px 40px;
   overflow-y:auto;
   text-align:center;
   pointer-events:none;
@@ -75,12 +71,9 @@ p {color:#ccc;}
   text-decoration:none;
   cursor:pointer;
   border:none;
-  transition:0.2s;
 }
 
-.btn:hover {
-  transform:scale(1.05);
-}
+.btn:hover {opacity:0.8;}
 
 /* GRID */
 .grid {
@@ -90,39 +83,21 @@ p {color:#ccc;}
   gap:20px;
 }
 
+/* BOX */
 .box {
   background:#111;
   padding:20px;
   border-radius:12px;
-  width:250px;
+  width:260px;
   border:1px solid #222;
-  transition:0.3s;
 }
 
-.box:hover {
-  transform:translateY(-5px);
-  border-color:var(--brown);
-}
-
-/* STATS */
-.stats {
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  margin-top:40px;
-  flex-wrap:wrap;
-}
-
-.stat h3 {
-  color:var(--brown);
-  font-size:2rem;
-}
-
-/* FAQ */
-.faq {
-  max-width:600px;
-  margin:20px auto;
+/* LIST */
+.list {
   text-align:left;
+  font-size:0.9rem;
+  margin-top:10px;
+  color:#ccc;
 }
 
 /* ARROWS */
@@ -132,91 +107,80 @@ p {color:#ccc;}
   transform:translateY(-50%);
   font-size:30px;
   background:#111;
-  padding:14px;
+  padding:12px;
   border-radius:50%;
   cursor:pointer;
   z-index:9999;
-  border:1px solid #333;
 }
 
-.arrow:hover {
-  background:var(--brown);
-}
+.arrow.left {left:10px;}
+.arrow.right {right:10px;}
 
-.arrow.left { left:15px; }
-.arrow.right { right:15px; }
+.arrow:hover {background:var(--brown);}
 
-/* FOOTER */
 footer {
   margin-top:40px;
   color:#777;
-  font-size:0.9rem;
 }
 </style>
 </head>
 
 <body>
 
-<div class="nav">
-  <span>P&J CREATIVE STUDIO</span>
-</div>
+<div class="nav">P&J CREATIVE STUDIO</div>
 
 <div class="arrow left" onclick="prevPage()">←</div>
 <div class="arrow right" onclick="nextPage()">→</div>
 
 <!-- PAGE 1 -->
 <div id="page1" class="page active">
-  <h1>We build websites that turn visitors into customers</h1>
-  <p>Modern, affordable websites for your business</p>
+  <h1>we build websites that build your business</h1>
+  <p>Modern, affordable websites for your brand</p>
 
-  <button class="btn" onclick="goToPage(3)">Get Started</button>
-  <br>
-  <button class="btn" onclick="goToPage(2)">See More</button>
+  <button class="btn" onclick="goToPage(3)">Get Started</button><br>
+  <button class="btn" onclick="goToPage(2)">See Plans</button>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat">
-      <h3>Fast</h3>
-      <p>Quick delivery</p>
-    </div>
-    <div class="stat">
-      <h3>Clean</h3>
-      <p>Modern design</p>
-    </div>
-    <div class="stat">
-      <h3>Affordable</h3>
-      <p>Great pricing</p>
-    </div>
-  </div>
-
-  <footer>© 2026 P&J Creative Studio</footer>
+  <footer>Fast • Clean • Affordable</footer>
 </div>
 
 <!-- PAGE 2 -->
 <div id="page2" class="page">
-  <h2>Website Packages</h2>
+
+  <h2>Website Plans</h2>
 
   <div class="grid">
+
     <div class="box">
       <h3>Starter</h3>
       <p>Starts at ₱2,000</p>
+
+      <div class="list">
+        ✔ 1-page website<br>
+        ✔ Mobile responsive<br>
+        ✔ Clean modern design<br>
+        ✔ Fast delivery
+      </div>
+
       <button class="btn" onclick="goToPage(3)">Get Started</button>
     </div>
 
     <div class="box">
       <h3>Business</h3>
       <p>Custom Pricing</p>
+
+      <div class="list">
+        ✔ Multi-page website<br>
+        ✔ Custom design<br>
+        ✔ Better performance<br>
+        ✔ Built for growth
+      </div>
+
       <button class="btn" onclick="goToPage(3)">Get Started</button>
     </div>
+
   </div>
 
-  <!-- FAQ -->
-  <h2 style="margin-top:50px;">FAQ</h2>
-  <div class="faq">
-    <p><strong>How long does it take?</strong><br>Usually a few days.</p>
-    <p><strong>Do I need a domain?</strong><br>Yes, we can help you set it up.</p>
-    <p><strong>Can I request changes?</strong><br>Yes, before final delivery.</p>
-  </div>
+  <footer>Need something custom? We got you 👍</footer>
 </div>
 
 <!-- PAGE 3 -->
