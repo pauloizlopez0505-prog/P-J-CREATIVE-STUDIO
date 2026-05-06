@@ -7,13 +7,9 @@
 
   <style>
     :root {
-      --black: #000000;
-      --white: #ffffff;
+      --black: #000;
+      --white: #fff;
       --brown: #8B5E3C;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -21,266 +17,122 @@
       font-family: Arial, sans-serif;
       background: var(--black);
       color: var(--white);
+      overflow-x: hidden;
     }
 
-    section {
+    .page {
+      display: none;
+      min-height: 100vh;
       padding: 80px 20px;
       text-align: center;
-      max-width: 1000px;
-      margin: auto;
     }
 
-    h1 {
-      font-size: 2.8rem;
-      line-height: 1.4;
+    .active {
+      display: block;
     }
 
-    h2 {
-      color: var(--brown);
-      margin-bottom: 20px;
-    }
+    h1 { font-size: 2.5rem; }
+    h2 { color: var(--brown); }
 
-    p {
-      color: #ccc;
-    }
+    p { color: #ccc; }
 
     .btn {
       display: inline-block;
-      padding: 14px 26px;
+      margin-top: 20px;
+      padding: 12px 24px;
       background: var(--brown);
       color: white;
       text-decoration: none;
       border-radius: 8px;
-      margin-top: 20px;
-      font-weight: bold;
+      cursor: pointer;
     }
 
-    .btn:hover {
-      opacity: 0.85;
-    }
-
-    /* ANIMATION */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* HERO */
-    .hero p {
-      margin-top: 15px;
-    }
-
-    .trust-line {
-      margin-top: 15px;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    /* GRID */
     .grid {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .box {
       background: #111;
-      padding: 25px;
+      padding: 20px;
       border-radius: 12px;
-      width: 260px;
+      width: 250px;
       border: 1px solid #222;
-      transition: 0.3s;
-    }
-
-    .box:hover {
-      transform: translateY(-5px);
-      border-color: var(--brown);
     }
 
     .price {
-      font-size: 2rem;
-      margin: 15px 0;
-    }
-
-    .testimonial {
-      max-width: 600px;
-      margin: 20px auto;
-      font-style: italic;
-    }
-
-    .urgency {
-      background: #111;
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-      border: 1px solid #222;
-    }
-
-    .contact-box {
-      background: #111;
-      padding: 30px;
-      border-radius: 12px;
-      display: inline-block;
-      border: 1px solid #222;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #888;
+      font-size: 1.8rem;
+      margin: 10px 0;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero fade-in">
+  <!-- PAGE 1 -->
+  <div id="page1" class="page active">
     <h2>P&J CREATIVE STUDIO</h2>
-    <h1>We build websites that turn visitors into paying customers</h1>
-    <p>Modern, affordable websites designed to grow your business</p>
+    <h1>We build websites that turn visitors into customers</h1>
+    <p>Modern, affordable websites for your business</p>
 
-    <a href="#contact" class="btn">Get Your Website Now</a>
+    <!-- GO TO CONTACT DIRECT -->
+    <button class="btn" onclick="showPage(3)">Get Started</button>
 
-    <div class="trust-line">
-      Fast delivery • Mobile-friendly • Built for real businesses
-    </div>
-  </section>
+    <br><br>
 
-  <!-- WHO IT'S FOR -->
-  <section class="fade-in">
-    <h2>Perfect For</h2>
-    <p>✔ Small businesses</p>
-    <p>✔ Online sellers</p>
-    <p>✔ Startups</p>
-    <p>✔ Anyone who needs a professional website</p>
-  </section>
+    <!-- NEXT PAGE -->
+    <button class="btn" onclick="showPage(2)">See Plans</button>
+  </div>
 
-  <!-- WHAT YOU GET -->
-  <section class="fade-in">
-    <h2>What You Get</h2>
-    <div class="grid">
-      <div class="box">⚡ Fast loading website</div>
-      <div class="box">📱 Mobile responsive design</div>
-      <div class="box">🎨 Clean modern layout</div>
-      <div class="box">💼 Built for your business</div>
-    </div>
-  </section>
 
-  <!-- PLANS -->
-  <section class="fade-in">
-    <h2>Professional Websites Starting at ₱2,000</h2>
-    <p>Flexible pricing based on your needs</p>
+  <!-- PAGE 2 -->
+  <div id="page2" class="page">
+    <h2>Website Packages</h2>
 
     <div class="grid">
       <div class="box">
         <h3>Starter Website</h3>
         <div class="price">Starts at ₱2,000</div>
-        <p>
-          Clean 1-page website<br>
-          Mobile responsive<br>
-          Fast delivery
-        </p>
-        <a href="#contact" class="btn">Get Started</a>
+        <p>1-page • Mobile • Fast delivery</p>
+        <button class="btn" onclick="showPage(3)">Get Started</button>
       </div>
 
       <div class="box">
         <h3>Business Website</h3>
         <div class="price">Custom Pricing</div>
-        <p>
-          Multi-page website<br>
-          Custom design<br>
-          Built for growth
-        </p>
-        <a href="#contact" class="btn">Get Started</a>
+        <p>Multi-page • Custom design • Growth ready</p>
+        <button class="btn" onclick="showPage(3)">Get Started</button>
       </div>
     </div>
 
-    <p style="margin-top:20px; color:#aaa; font-size:0.9rem;">
-      Final price depends on features, pages, and complexity.
-    </p>
-  </section>
+    <br>
+    <button class="btn" onclick="showPage(1)">Back</button>
+  </div>
 
-  <!-- PORTFOLIO -->
-  <section class="fade-in">
-    <h2>Recent Work</h2>
 
-    <div class="grid">
-      <div class="box">
-        <h3>Restaurant Website</h3>
-        <p>Modern design for a local food business</p>
-      </div>
-
-      <div class="box">
-        <h3>Clothing Brand</h3>
-        <p>Clean and stylish landing page</p>
-      </div>
-
-      <div class="box">
-        <h3>Startup Page</h3>
-        <p>Built to convert visitors into customers</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="fade-in">
-    <h2>What Clients Say</h2>
-
-    <div class="testimonial">
-      “Got my website in just a few days. It looks professional and helped my business.”
-    </div>
-
-    <div class="testimonial">
-      “Affordable and high quality. Super easy to work with.”
-    </div>
-  </section>
-
-  <!-- URGENCY -->
-  <section class="fade-in">
-    <h2>Limited Slots Available</h2>
-
-    <div class="urgency">
-      We only accept a few clients per week to maintain quality.<br>
-      Book now before slots are full.
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="fade-in">
+  <!-- PAGE 3 (CONTACT) -->
+  <div id="page3" class="page">
     <h2>Reach Me</h2>
     <p>Ready to get your website?</p>
 
-    <div class="contact-box">
+    <div class="box" style="margin:auto;">
       <p><strong>Phone:</strong> 0906 097 0741</p>
       <a href="tel:09060970741" class="btn">Call Now</a>
     </div>
-  </section>
 
-  <footer>
-    © 2026 P&J Creative Studio
-  </footer>
+    <br>
+    <button class="btn" onclick="showPage(1)">Back to Home</button>
+  </div>
 
-  <!-- ANIMATION SCRIPT -->
+
+  <!-- SCRIPT -->
   <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    });
-
-    document.querySelectorAll(".fade-in").forEach(el => {
-      observer.observe(el);
-    });
+    function showPage(pageNumber) {
+      document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+      document.getElementById("page" + pageNumber).classList.add("active");
+    }
   </script>
 
 </body>
