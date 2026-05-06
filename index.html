@@ -31,9 +31,10 @@ body {
   z-index:9999;
   border-bottom:1px solid #222;
   color:var(--brown);
+  font-weight:bold;
 }
 
-/* PAGE */
+/* PAGE SYSTEM */
 .page {
   position:absolute;
   width:100%;
@@ -47,18 +48,11 @@ body {
   text-align:center;
 }
 
-.page.active {
-  left:0;
-  opacity:1;
-}
-
-.page.left {
-  left:-100%;
-  opacity:0;
-}
+.page.active { left:0; opacity:1; }
+.page.left { left:-100%; }
 
 /* TEXT */
-h1 {font-size:2.5rem;}
+h1 {font-size:2.6rem; line-height:1.3;}
 h2 {color:var(--brown);}
 p {color:#ccc;}
 
@@ -73,9 +67,9 @@ p {color:#ccc;}
   text-decoration:none;
   cursor:pointer;
   border:none;
+  font-weight:bold;
 }
-
-.btn:hover {opacity:0.8;}
+.btn:hover {opacity:0.85;}
 
 /* GRID */
 .grid {
@@ -92,18 +86,16 @@ p {color:#ccc;}
   border-radius:12px;
   width:260px;
   border:1px solid #222;
+  transition:0.3s;
 }
-
-/* PORTFOLIO */
-.portfolio img {
-  width:100%;
-  border-radius:10px;
-  margin-bottom:10px;
+.box:hover {
+  transform:translateY(-5px);
+  border-color:var(--brown);
 }
 
 /* ICON */
 .icon {
-  font-size:28px;
+  font-size:26px;
   margin-bottom:10px;
 }
 
@@ -115,10 +107,31 @@ p {color:#ccc;}
   color:#ccc;
 }
 
+/* PORTFOLIO */
+.portfolio img {
+  width:100%;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+
+/* TRUST */
+.trust {
+  margin-top:20px;
+  font-size:0.9rem;
+  color:#aaa;
+}
+
+/* TESTIMONIAL */
+.testimonial {
+  max-width:600px;
+  margin:20px auto;
+  font-style:italic;
+}
+
 /* FAQ */
 .faq {
   max-width:600px;
-  margin:40px auto 0;
+  margin:40px auto;
   text-align:left;
 }
 
@@ -127,19 +140,18 @@ p {color:#ccc;}
   position:fixed;
   top:50%;
   transform:translateY(-50%);
-  font-size:30px;
+  font-size:28px;
   background:#111;
   padding:12px;
   border-radius:50%;
   cursor:pointer;
   z-index:9999;
 }
-
 .arrow.left {left:10px;}
 .arrow.right {right:10px;}
-
 .arrow:hover {background:var(--brown);}
 
+/* FOOTER */
 footer {
   margin-top:40px;
   color:#777;
@@ -154,18 +166,25 @@ footer {
 <div class="arrow left" onclick="prevPage()">←</div>
 <div class="arrow right" onclick="nextPage()">→</div>
 
-<!-- PAGE 1 -->
+<!-- PAGE 1 (HERO) -->
 <div id="page1" class="page active">
   <h1>we build websites that build your business</h1>
-  <p>Modern, affordable websites for your brand</p>
+  <p>Modern, fast, and affordable websites designed to turn visitors into customers</p>
 
-  <button class="btn" onclick="goToPage(4)">Get Started</button><br>
-  <button class="btn" onclick="goToPage(2)">See Plans</button>
+  <button class="btn" onclick="goToPage(4)">Get Started</button>
+  <br>
+  <button class="btn" onclick="goToPage(2)">View Plans</button>
 
-  <footer>Fast • Clean • Affordable</footer>
+  <div class="trust">
+    ✔ Free preview before payment<br>
+    ✔ Mobile-friendly & fast<br>
+    ✔ Built for real businesses
+  </div>
+
+  <footer>Only a few client slots available this week</footer>
 </div>
 
-<!-- PAGE 2 -->
+<!-- PAGE 2 (PLANS + PORTFOLIO) -->
 <div id="page2" class="page">
 
   <h2>Website Plans</h2>
@@ -176,14 +195,12 @@ footer {
       <div class="icon">🚀</div>
       <h3>Starter</h3>
       <p>Starts at ₱2,000</p>
-
       <div class="list">
         ✔ 1-page website<br>
         ✔ Mobile responsive<br>
         ✔ Clean modern design<br>
         ✔ Fast delivery
       </div>
-
       <button class="btn" onclick="goToPage(4)">Get Started</button>
     </div>
 
@@ -191,30 +208,28 @@ footer {
       <div class="icon">💼</div>
       <h3>Business</h3>
       <p>Custom Pricing</p>
-
       <div class="list">
         ✔ Multi-page website<br>
         ✔ Custom design<br>
-        ✔ Better performance<br>
-        ✔ Built for growth
+        ✔ Built for growth<br>
+        ✔ Priority support
       </div>
-
       <button class="btn" onclick="goToPage(4)">Get Started</button>
     </div>
 
   </div>
 
-  <!-- PORTFOLIO (NEW) -->
+  <!-- PORTFOLIO -->
   <h2 style="margin-top:50px;">Recent Work</h2>
 
   <div class="grid portfolio">
     <div class="box">
       <img src="https://via.placeholder.com/300x200">
-      Restaurant Website
+      Business Website
     </div>
     <div class="box">
       <img src="https://via.placeholder.com/300x200">
-      Clothing Brand
+      Online Store
     </div>
     <div class="box">
       <img src="https://via.placeholder.com/300x200">
@@ -222,32 +237,38 @@ footer {
     </div>
   </div>
 
-  <h2 style="margin-top:50px;">What You Get</h2>
+  <!-- TESTIMONIALS -->
+  <h2 style="margin-top:50px;">What Clients Say</h2>
 
-  <div class="grid">
-    <div class="box">⚡ Fast loading</div>
-    <div class="box">📱 Mobile ready</div>
-    <div class="box">🎨 Clean design</div>
-    <div class="box">💼 Business focused</div>
+  <div class="testimonial">
+    “Got my website fast and it actually helped my business look professional.”
+  </div>
+
+  <div class="testimonial">
+    “Affordable and easy to work with. Highly recommended.”
   </div>
 
   <footer>Need something custom? We got you 👍</footer>
 </div>
 
-<!-- PAGE 3 -->
+<!-- PAGE 3 (FAQ) -->
 <div id="page3" class="page">
   <h2>FAQ</h2>
 
   <div class="faq">
-    <p><strong>⏱ How long does it take?</strong><br>Usually a few days.</p>
-    <p><strong>🌐 Do I need a domain?</strong><br>Yes, we can help.</p>
-    <p><strong>💰 When do I pay?</strong><br>After preview approval.</p>
+    <p><strong>How long does it take?</strong><br>Usually a few days depending on your needs.</p>
+
+    <p><strong>Do I need a domain?</strong><br>We can help you set one up or guide you.</p>
+
+    <p><strong>When do I pay?</strong><br>You only pay after you approve the preview.</p>
+
+    <p><strong>Can I request changes?</strong><br>Yes, we revise until you're satisfied.</p>
   </div>
 
-  <footer>Still have questions? Go to contact 👍</footer>
+  <footer>Still unsure? Go to contact 👍</footer>
 </div>
 
-<!-- PAGE 4 -->
+<!-- PAGE 4 (CONTACT) -->
 <div id="page4" class="page">
   <h2>Reach Me</h2>
   <p>Ready to get your website?</p>
@@ -256,6 +277,10 @@ footer {
     <div class="icon">📞</div>
     <p><strong>Phone:</strong> 0906 097 0741</p>
     <a href="tel:09060970741" class="btn">Call Now</a>
+  </div>
+
+  <div class="trust">
+    ⚡ Usually responds within minutes
   </div>
 
   <footer>Let’s build your business online 🚀</footer>
@@ -279,10 +304,7 @@ function prevPage() {
 
 function changePage(newPage) {
   const pages = document.querySelectorAll(".page");
-
-  pages.forEach(p => {
-    p.classList.remove("active", "left");
-  });
+  pages.forEach(p => p.classList.remove("active", "left"));
 
   if (newPage > currentPage) {
     document.getElementById("page" + currentPage).classList.add("left");
