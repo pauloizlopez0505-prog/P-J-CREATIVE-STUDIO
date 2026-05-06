@@ -39,20 +39,22 @@ body {
   width:100%;
   height:100%;
   top:0;
-  left:0;
+  left:100%;
   opacity:0;
-  transform:translateX(40px);
-  transition:0.5s;
+  transition:all 0.5s ease;
   padding:90px 20px 40px;
   overflow-y:auto;
   text-align:center;
-  pointer-events:none;
 }
 
 .page.active {
+  left:0;
   opacity:1;
-  transform:translateX(0);
-  pointer-events:auto;
+}
+
+.page.left {
+  left:-100%;
+  opacity:0;
 }
 
 /* TEXT */
@@ -90,6 +92,13 @@ p {color:#ccc;}
   border-radius:12px;
   width:260px;
   border:1px solid #222;
+}
+
+/* PORTFOLIO */
+.portfolio img {
+  width:100%;
+  border-radius:10px;
+  margin-bottom:10px;
 }
 
 /* ICON */
@@ -195,7 +204,24 @@ footer {
 
   </div>
 
-  <!-- EXTRA CONTENT (NEW, NOT REMOVING ANYTHING) -->
+  <!-- PORTFOLIO (NEW) -->
+  <h2 style="margin-top:50px;">Recent Work</h2>
+
+  <div class="grid portfolio">
+    <div class="box">
+      <img src="https://via.placeholder.com/300x200">
+      Restaurant Website
+    </div>
+    <div class="box">
+      <img src="https://via.placeholder.com/300x200">
+      Clothing Brand
+    </div>
+    <div class="box">
+      <img src="https://via.placeholder.com/300x200">
+      Startup Landing Page
+    </div>
+  </div>
+
   <h2 style="margin-top:50px;">What You Get</h2>
 
   <div class="grid">
@@ -205,30 +231,23 @@ footer {
     <div class="box">💼 Business focused</div>
   </div>
 
-  <h2 style="margin-top:50px;">Who It's For</h2>
-  <p>✔ Small businesses<br>✔ Online sellers<br>✔ Startups<br>✔ Personal brands</p>
-
   <footer>Need something custom? We got you 👍</footer>
 </div>
 
-<!-- PAGE 3 (FAQ) -->
+<!-- PAGE 3 -->
 <div id="page3" class="page">
   <h2>FAQ</h2>
 
   <div class="faq">
     <p><strong>⏱ How long does it take?</strong><br>Usually a few days.</p>
-
-    <p><strong>🌐 Do I need a domain?</strong><br>Yes, we can help or guide you.</p>
-
-    <p><strong>✏️ Can I request changes?</strong><br>Yes, before final delivery.</p>
-
-    <p><strong>💰 When do I pay?</strong><br>Only after you approve the preview.</p>
+    <p><strong>🌐 Do I need a domain?</strong><br>Yes, we can help.</p>
+    <p><strong>💰 When do I pay?</strong><br>After preview approval.</p>
   </div>
 
   <footer>Still have questions? Go to contact 👍</footer>
 </div>
 
-<!-- PAGE 4 (CONTACT) -->
+<!-- PAGE 4 -->
 <div id="page4" class="page">
   <h2>Reach Me</h2>
   <p>Ready to get your website?</p>
@@ -247,22 +266,29 @@ let currentPage = 1;
 const totalPages = 4;
 
 function goToPage(page) {
-  currentPage = page;
-  updatePage();
+  changePage(page);
 }
 
 function nextPage() {
-  if (currentPage < totalPages) currentPage++;
-  updatePage();
+  if (currentPage < totalPages) changePage(currentPage + 1);
 }
 
 function prevPage() {
-  if (currentPage > 1) currentPage--;
-  updatePage();
+  if (currentPage > 1) changePage(currentPage - 1);
 }
 
-function updatePage() {
-  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+function changePage(newPage) {
+  const pages = document.querySelectorAll(".page");
+
+  pages.forEach(p => {
+    p.classList.remove("active", "left");
+  });
+
+  if (newPage > currentPage) {
+    document.getElementById("page" + currentPage).classList.add("left");
+  }
+
+  currentPage = newPage;
   document.getElementById("page" + currentPage).classList.add("active");
 }
 </script>
