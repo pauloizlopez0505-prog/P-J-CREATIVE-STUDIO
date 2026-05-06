@@ -1,1 +1,202 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>P&J Creative Studio</title> <style> :root { --black: #000; --white: #fff; --brown: #8B5E3C; } body { margin: 0; font-family: Arial, sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; } /* PAGES */ .page { position: absolute; width: 100%; height: 100vh; top: 0; left: 100%; opacity: 0; transition: all 0.5s ease; display: flex; justify-content: center; align-items: center; text-align: center; padding: 20px; } .page.active { left: 0; opacity: 1; } /* CONTENT */ h1 { font-size: 2.5rem; } h2 { color: var(--brown); } .btn { display: inline-block; padding: 12px 24px; background: var(--brown); color: white; text-decoration: none; border-radius: 8px; margin-top: 20px; } /* PREMIUM ARROWS */ .arrow { position: fixed; top: 50%; transform: translateY(-50%); font-size: 22px; color: white; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 14px 16px; border-radius: 50%; cursor: pointer; z-index: 999; transition: all 0.25s ease; } .arrow.left { left: 20px; } .arrow.right { right: 20px; } .arrow:hover { background: rgba(139,94,60,0.9); transform: translateY(-50%) scale(1.1); } /* MOBILE FIX */ @media (max-width: 768px) { .arrow { top: auto; bottom: 20px; transform: none; font-size: 18px; padding: 10px 12px; } .arrow.left { left: 15px; } .arrow.right { right: 15px; } h1 { font-size: 1.8rem; } } </style> </head> <body> <!-- ARROWS --> <div class="arrow left" onclick="prevPage()">‹</div> <div class="arrow right" onclick="nextPage()">›</div> <!-- PAGE 1 --> <div id="page1" class="page active"> <div> <h2>P&J CREATIVE STUDIO</h2> <h1>We build websites that build your business</h1> <p>Modern websites for small businesses</p> <a href="#" class="btn" onclick="goToPage(4)">Get Started</a> <br> <a href="#" class="btn" onclick="goToPage(2)">View Plans</a> </div> </div> <!-- PAGE 2 --> <div id="page2" class="page"> <div> <h2>Plans</h2> <p>Websites start at ₱2,000</p> <p>✔ Modern Design</p> <p>✔ Mobile Friendly</p> <p>✔ Fast Delivery</p> </div> </div> <!-- PAGE 3 --> <div id="page3" class="page"> <div> <h2>FAQ</h2> <p><strong>Do I pay first?</strong><br>No, preview first.</p> <p><strong>How long?</strong><br>1–3 days</p> </div> </div> <!-- PAGE 4 --> <div id="page4" class="page"> <div> <h2>Reach Me</h2> <p>0906 097 0741</p> <a href="tel:09060970741" class="btn">Call Now</a> </div> </div> <script> let currentPage = 1; const totalPages = 4; function showPage(page) { for (let i = 1; i <= totalPages; i++) { document.getElementById("page" + i).classList.remove("active"); } document.getElementById("page" + page).classList.add("active"); } function nextPage() { if (currentPage < totalPages) { currentPage++; showPage(currentPage); } } function prevPage() { if (currentPage > 1) { currentPage--; showPage(currentPage); } } function goToPage(page) { currentPage = page; showPage(page); } </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P&J Creative Studio</title>
+
+  <style>
+    :root {
+      --black: #000;
+      --white: #fff;
+      --brown: #8B5E3C;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* PAGES */
+    .page {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 100%;
+      opacity: 0;
+      transition: all 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .page.active {
+      left: 0;
+      opacity: 1;
+    }
+
+    /* CONTENT */
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      color: var(--brown);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--brown);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    /* PREMIUM ARROWS */
+    .arrow {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 22px;
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 14px 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 999;
+      transition: all 0.25s ease;
+    }
+
+    .arrow.left {
+      left: 20px;
+    }
+
+    .arrow.right {
+      right: 20px;
+    }
+
+    .arrow:hover {
+      background: rgba(139,94,60,0.9);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    /* MOBILE FIX */
+    @media (max-width: 768px) {
+      .arrow {
+        top: auto;
+        bottom: 20px;
+        transform: none;
+        font-size: 18px;
+        padding: 10px 12px;
+      }
+
+      .arrow.left {
+        left: 15px;
+      }
+
+      .arrow.right {
+        right: 15px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ARROWS -->
+  <div class="arrow left" onclick="prevPage()">‹</div>
+  <div class="arrow right" onclick="nextPage()">›</div>
+
+  <!-- PAGE 1 -->
+  <div id="page1" class="page active">
+    <div>
+      <h2>P&J CREATIVE STUDIO</h2>
+      <h1>We build websites that build your business</h1>
+      <p>Modern websites for small businesses</p>
+
+      <a href="#" class="btn" onclick="goToPage(4)">Get Started</a><br>
+      <a href="#" class="btn" onclick="goToPage(2)">View Plans</a>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div id="page2" class="page">
+    <div>
+      <h2>Plans</h2>
+      <p>Websites start at ₱2,000</p>
+      <p>✔ Modern Design</p>
+      <p>✔ Mobile Friendly</p>
+      <p>✔ Fast Delivery</p>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div id="page3" class="page">
+    <div>
+      <h2>FAQ</h2>
+      <p><strong>Do I pay first?</strong><br>No, preview first.</p>
+      <p><strong>How long?</strong><br>1–3 days</p>
+    </div>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div id="page4" class="page">
+    <div>
+      <h2>Reach Me</h2>
+      <p>0906 097 0741</p>
+      <a href="tel:09060970741" class="btn">Call Now</a>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 4;
+
+    function showPage(page) {
+      for (let i = 1; i <= totalPages; i++) {
+        document.getElementById("page" + i).classList.remove("active");
+      }
+      document.getElementById("page" + page).classList.add("active");
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    }
+
+    function goToPage(page) {
+      currentPage = page;
+      showPage(page);
+    }
+  </script>
+
+</body>
+</html>
